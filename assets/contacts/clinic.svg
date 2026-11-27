@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 180">
+  <!-- Clinic team: nurse with a checklist and test results -->
+  <rect width="320" height="180" fill="#eaf5fb"/>
+  <circle cx="225" cy="98" r="72" fill="#d5ebf5"/>
+  <circle cx="300" cy="150" r="7" fill="#c4e4f1"/>
+  <circle cx="22" cy="24" r="5" fill="#c4e4f1"/>
+  <!-- Test results sheet behind the clipboard -->
+  <g transform="rotate(-8 80 90)">
+    <rect x="40" y="40" width="78" height="100" rx="8" fill="#fff" stroke="#c9dbe6" stroke-width="2"/>
+    <rect x="52" y="54" width="40" height="6" rx="3" fill="#0c2e82"/>
+    <polyline points="52,104 64,96 74,100 86,84 98,90 106,78" fill="none" stroke="#1b9ec6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="52" y="116" width="54" height="5" rx="2.5" fill="#dbe8f0"/>
+  </g>
+  <!-- Clipboard with a checklist -->
+  <g transform="translate(92 44)">
+    <rect width="76" height="104" rx="9" fill="#0b6f98"/>
+    <rect x="7" y="12" width="62" height="86" rx="5" fill="#fff"/>
+    <rect x="24" y="-5" width="28" height="14" rx="5" fill="#3dbee3"/>
+    <g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
+      <path d="M15 31l4 4 7-8M15 53l4 4 7-8" stroke="#1b9ec6"/>
+      <path d="M33 31h28M33 53h28M33 75h28" stroke="#dbe8f0"/>
+    </g>
+    <rect x="14" y="68" width="13" height="13" rx="3" fill="none" stroke="#c9dbe6" stroke-width="2.5"/>
+  </g>
+  <!-- Nurse -->
+  <path d="M170 180c0-36 18-54 42-54s42 18 42 54z" fill="#1b9ec6"/>
+  <path d="M199 126l13 18 13-18" fill="none" stroke="#fff" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="236" y="150" width="12" height="16" rx="2" fill="#fff"/>
+  <rect x="205" y="104" width="14" height="16" rx="5" fill="#a86f4c"/>
+  <circle cx="212" cy="88" r="21" fill="#c98e6a"/>
+  <path d="M190 90c-2-21 9-32 22-32s24 11 22 32c-4-10-11-15-22-15s-18 5-22 15z" fill="#1f1b24"/>
+  <circle cx="234" cy="70" r="9" fill="#1f1b24"/>
+  <circle cx="205" cy="90" r="2" fill="#1f2d4d"/>
+  <circle cx="219" cy="90" r="2" fill="#1f2d4d"/>
+  <path d="M206 98q6 5 12 0" fill="none" stroke="#1f2d4d" stroke-width="2" stroke-linecap="round"/>
+</svg>

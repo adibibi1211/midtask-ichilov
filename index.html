@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="יחידת למידה קצרה על ארגון המידע, הכנת שאלות והיערכות לשיחה במרפאת טרום ניתוח.">
+  <meta name="author" content="קבוצה 2, קורס תכנות 3">
+  <meta name="keywords" content="פגישת טרום ניתוח, איכילוב, הכנת שאלות, תיק פגישה">
+  <meta name="theme-color" content="#0c2e82">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="he_IL">
+  <meta property="og:title" content="מגיעים מוכנים | הכנה לפגישת טרום ניתוח">
+  <meta property="og:description" content="יחידת למידה קצרה: מארגנים את המידע, מזהים מה חסר ומכינים שאלות ממוקדות לפגישת טרום ניתוח.">
+  <title>מגיעים מוכנים | הכנה לפגישת טרום ניתוח</title>
+  <link rel="icon" href="assets/ichilov-mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/bootstrap.rtl.min.css">
+  <link rel="stylesheet" href="css/style.css?v=20261126-resume">
+  <script defer src="js/bootstrap.bundle.min.js"></script>
+  <script defer src="js/scorm-api-wrapper.js"></script>
+  <script defer src="js/quiz-data.js?v=20261126-q2"></script>
+  <script defer src="js/contacts-data.js?v=20261124-step3"></script>
+  <script defer src="js/scorm.js?v=20261126-resume"></script>
+  <script defer src="js/main.js?v=20261126-resume"></script>
+</head>
+<body>
+  <!-- Line icons used across the page (decorative). -->
+  <svg class="d-none" aria-hidden="true" focusable="false">
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></symbol>
+    <symbol id="i-list" viewBox="0 0 24 24"><path d="M9 6h11M9 12h11M9 18h11"/><circle cx="4.5" cy="6" r="1"/><circle cx="4.5" cy="12" r="1"/><circle cx="4.5" cy="18" r="1"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.7 2.7L16 9.8"/></symbol>
+    <symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.2a2.5 2.5 0 1 1 3.4 2.3c-.6.3-.9.8-.9 1.5v.5M12 16.8h.01"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.4A8 8 0 1 1 21 12z"/></symbol>
+    <symbol id="i-flip" viewBox="0 0 24 24"><path d="M4 12a8 8 0 0 1 14-5.3M20 12a8 8 0 0 1-14 5.3"/><path d="M18 3v4h-4M6 21v-4h4"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5z"/><path d="M4 20.5A2.5 2.5 0 0 0 6.5 23H20v-5M9 8h7M9 12h5"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5.5M12 7.6h.01"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9 9l6 6M15 9l-6 6"/></symbol>
+    <symbol id="i-external" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9"/><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></symbol>
+  </svg>
+
+  <a class="skip" href="#mainContent">דילוג לתוכן</a>
+  <!-- Header: fixed top bar (logo, text size, glossary, motion, menu) and the opening cover. -->
+  <header id="intro" class="site-header">
+    <div id="topBar" class="top-bar">
+      <div class="container wide d-flex flex-wrap align-items-center justify-content-between">
+        <a class="hospital-link" href="https://www.tasmc.org.il/" target="_blank" rel="noopener noreferrer"><img class="logo" src="assets/ichilov.svg" alt="האתר הרשמי של איכילוב (נפתח בלשונית חדשה)"></a>
+        <!-- data-bs-title: the name shown in a Bootstrap tooltip on hover and keyboard focus. -->
+        <div class="text-size" role="group" aria-label="גודל הטקסט">
+          <button type="button" class="size-button" data-size="normal" aria-pressed="true" aria-label="טקסט רגיל" data-bs-title="טקסט רגיל">א</button>
+          <button type="button" class="size-button size-large" data-size="large" aria-pressed="false" aria-label="טקסט בינוני" data-bs-title="טקסט בינוני">א</button>
+          <button type="button" class="size-button size-xlarge" data-size="xlarge" aria-pressed="false" aria-label="טקסט גדול" data-bs-title="טקסט גדול">א</button>
+        </div>
+        <p id="textSizeStatus" class="visually-hidden" role="status" aria-atomic="true"></p>
+        <!-- Opens the glossary window (Bootstrap modal) at any point in the unit. -->
+        <button type="button" id="glossaryButton" class="bar-button" data-bs-toggle="modal" data-bs-target="#glossary" aria-label="מושגים חשובים" data-bs-title="מושגים חשובים"><svg class="icon" aria-hidden="true"><use href="#i-book"/></svg></button>
+        <!-- Pauses the moving effects. aria-pressed="true" = paused; the tooltip shows the next action. -->
+        <button type="button" id="motionToggle" class="bar-button motion-button" aria-pressed="false" aria-label="עצירת הנפשות" data-bs-title="עצירת הנפשות"><span class="motion-icon" aria-hidden="true"></span></button>
+        <button type="button" id="navButton" class="nav-button d-xl-none" aria-expanded="false" aria-controls="mainNav"><span aria-hidden="true">☰</span><span class="nav-button-text"> תפריט</span></button>
+        <nav id="mainNav" class="main-nav d-none d-xl-flex" aria-label="ניווט ראשי">
+          <a href="#dossier"><span class="nav-step" aria-hidden="true">1</span>התיק של יעל</a>
+          <a href="#contacts"><span class="nav-step" aria-hidden="true">2</span>למי פונים</a>
+          <a href="#practice"><span class="nav-step" aria-hidden="true">3</span>מתרגלים</a>
+          <a href="#notes"><span class="nav-step" aria-hidden="true">4</span>השאלות שלי</a>
+          <a href="#more">עוד מידע מאיכילוב</a>
+        </nav>
+      </div>
+      <div class="scroll-progress" aria-hidden="true"><span id="scrollProgress"></span></div>
+    </div>
+    <!-- Cover: unit title, short intro and the folder that opens Yael's file. -->
+    <section class="cover" data-step="0" aria-labelledby="pageTitle">
+      <div class="brand-marks" aria-hidden="true"></div>
+      <div class="container wide">
+        <div class="row g-4 gx-lg-5 align-items-center hero">
+          <div class="col-md-6">
+            <div class="hero-copy reveal">
+              <p class="learner-greeting"><svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg><span id="learner-name">שלום וברוכים הבאים</span></p>
+              <p id="lms-notice" class="lms-notice" role="status" aria-atomic="true" hidden></p>
+              <p class="pill"><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg>יחידת למידה <span aria-hidden="true">·</span> כ־10 דקות</p>
+              <h1 id="pageTitle">מגיעים מוכנים<br>לפגישת <em>טרום ניתוח</em></h1>
+              <p class="story">לקראת פגישת טרום ניתוח, כדאי לעשות סדר במה שכבר קיבלתם ובמה שעוד תרצו לברר. באמצעות התיק לדוגמה של יעל נזהה מה חסר במידע, ננסח שאלות ממוקדות ונבין למי להפנות אותן. בסיום תוכלו להכין רשימת שאלות משלכם לפגישה.</p>
+              <button class="action" type="button" data-open="invite">לפתיחת התיק של יעל <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+            </div>
+          </div>
+          <div class="col-md-6 scene reveal">
+            <div class="folder">
+              <div class="folder-back"></div>
+              <button type="button" class="doc doc-1" data-open="invite"><svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg>זימון<i></i><i></i></button>
+              <button type="button" class="doc doc-2" data-open="info"><svg class="icon" aria-hidden="true"><use href="#i-file"/></svg>דף מידע<i></i><i></i></button>
+              <button type="button" class="doc doc-3" data-open="questions"><svg class="icon" aria-hidden="true"><use href="#i-list"/></svg>שאלות<i></i><i></i></button>
+              <div class="folder-front">
+                <div class="file-label"><span>מרפאת טרום ניתוח</span><img src="assets/ichilov.svg" alt="המרכז הרפואי תל אביב, איכילוב"></div>
+                <b class="file-name">התיק של יעל</b>
+                <div class="file-meta"><span><svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg>יום שני · <bdi>09:00</bdi></span><span class="barcode" aria-hidden="true"></span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <svg class="cover-wave" viewBox="0 0 1440 96" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+        <g id="wave-shape">
+          <path fill="#a6dbee" d="M0 48 C180 84 315 94 510 55 S800 1 1000 32 S1280 82 1440 30 V96 H0 Z"/>
+          <path fill="currentColor" d="M0 58 C185 94 323 98 518 61 S798 9 1000 38 S1280 86 1440 41 V100 H0 Z"/>
+        </g>
+      </svg>
+    </section>
+  </header>
+  <main id="mainContent" tabindex="-1">
+    <!-- Step 1: Yael's file (invite, info sheet, question list) as tabs. -->
+    <section id="dossier" class="section band dossier" data-step="1" aria-labelledby="dossierTitle">
+      <div class="brand-marks" aria-hidden="true"></div>
+      <div class="container">
+        <div class="row g-4 gx-lg-5 align-items-start">
+          <div class="col-md-5 section-intro reveal">
+            <p class="step-label"><b aria-hidden="true">1</b>שלב 1 מתוך 4</p>
+            <h2 id="dossierTitle">מה כבר יש בתיק?</h2>
+            <p class="lead-text">יעל קיבלה זימון ודף מידע. פתחו כל מסמך וראו מה כבר ברור לה, מה עוד חסר ואיך זה עוזר לה להתכונן לשיחה.</p>
+          </div>
+          <div class="col-md-7 file-reader reveal">
+            <div class="file-tabs d-flex align-items-end" role="tablist" aria-label="המסמכים בתיק של יעל">
+              <button role="tab" id="tab-invite" aria-controls="invite" aria-selected="true"><svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg>הזימון</button>
+              <button role="tab" id="tab-info" aria-controls="info" aria-selected="false" tabindex="-1"><svg class="icon" aria-hidden="true"><use href="#i-file"/></svg>דף המידע</button>
+              <button role="tab" id="tab-questions" aria-controls="questions" aria-selected="false" tabindex="-1"><svg class="icon" aria-hidden="true"><use href="#i-list"/></svg>רשימת השאלות</button>
+            </div>
+            <div class="file-pocket">
+              <article class="paper-sheet ruled file-sheet" id="invite" role="tabpanel" aria-labelledby="tab-invite" tabindex="0">
+                <div class="sheet-head d-flex flex-wrap align-items-center justify-content-between gap-2"><img src="assets/ichilov.svg" alt=""><span class="doc-tag">הודעה מהמרפאה · דוגמה</span></div>
+                <h3>הזימון של יעל</h3>
+                <blockquote>שלום יעל,<br>פגישתך במרפאת טרום ניתוח נקבעה ליום שני, <bdi>14.12</bdi>, בשעה <bdi>09:00</bdi>.<br>לבירור פרטי ההגעה, אפשר לפנות למתאמת הניתוחים שתיאמה את הפגישה.</blockquote>
+                <ul class="clarity list-unstyled">
+                  <li class="known"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span><strong>ברור ליעל</strong>התאריך והשעה של הפגישה. היא רושמת אותם ביומן.</span></li>
+                  <li class="missing"><svg class="icon" aria-hidden="true"><use href="#i-help"/></svg><span><strong>עוד חסר</strong>לאיזה בניין ולאיזו קומה להגיע. היא תברר זאת לפני יום הפגישה.</span></li>
+                  <li class="helps"><svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg><span><strong>איך זה עוזר לשיחה</strong>כשיעל יודעת מראש מה חסר, היא יכולה לברר זאת בזמן ולהגיע לפגישה רגועה ובמקום הנכון.</span></li>
+                </ul>
+              </article>
+              <article class="paper-sheet ruled file-sheet" id="info" role="tabpanel" aria-labelledby="tab-info" tabindex="0" hidden>
+                <div class="sheet-head d-flex flex-wrap align-items-center justify-content-between gap-2"><img src="assets/ichilov.svg" alt=""><span class="doc-tag">מידע לקראת הביקור · דוגמה</span></div>
+                <h3>דף המידע מהמרפאה</h3>
+                <blockquote>ביקורך במרפאה נקבע ליום רביעי, <bdi>16.12</bdi>.<br>לביקור יש להביא את המסמכים הרפואיים הנדרשים.</blockquote>
+                <ul class="clarity list-unstyled">
+                  <li class="known"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span><strong>ברור ליעל</strong>צריך להביא לביקור מסמכים רפואיים.</span></li>
+                  <li class="missing"><svg class="icon" aria-hidden="true"><use href="#i-help"/></svg><span><strong>עוד חסר</strong>התאריך כאן שונה מהתאריך בזימון, ולא כתוב אילו מסמכים להביא.</span></li>
+                  <li class="helps"><svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg><span><strong>איך זה עוזר לשיחה</strong>כשהמידע בשני מסמכים לא מתאים, כדאי לברר לפני הפגישה ולא לנחש.</span></li>
+                </ul>
+              </article>
+              <article class="paper-sheet ruled file-sheet" id="questions" role="tabpanel" aria-labelledby="tab-questions" tabindex="0" hidden>
+                <div class="sheet-head d-flex flex-wrap align-items-center justify-content-between gap-2"><img src="assets/ichilov.svg" alt=""><span class="doc-tag">מתוך המחברת של יעל · דוגמה</span></div>
+                <h3>רשימת השאלות</h3>
+                <dl class="written-list"><dt>למתאמת הניתוחים</dt><dd>בזימון שלי מופיעה השעה. לאיזה בניין ולאיזו קומה עליי להגיע?</dd><dt>שאלה שעוד צריך לנסח</dt><dd>התאריכים בזימון ובדף המידע שונים, ולא כתוב אילו מסמכים להביא.</dd></dl>
+                <ul class="clarity list-unstyled">
+                  <li class="known"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span><strong>מה יעל עשתה</strong>ליד כל שאלה מוכנה היא כתבה למי תפנה.</span></li>
+                  <li class="helps"><svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg><span><strong>איך זה עוזר לשיחה</strong>כשהשיחה מתחילה, יעל פותחת את הרשימה, מוצאת מיד את השאלה המתאימה ולא שוכחת דבר.</span></li>
+                </ul>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+      <svg class="section-wave" viewBox="0 0 1440 96" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+        <use href="#wave-shape"/>
+      </svg>
+    </section>
+    <!-- Step 2: contact cards - who to ask about what (flip cards). -->
+    <section id="contacts" class="section band contacts" data-step="2" aria-labelledby="contactsTitle">
+      <div class="brand-marks" aria-hidden="true"></div>
+      <div class="container">
+        <div class="row g-4 gx-lg-5 align-items-start">
+          <div class="col-md-5 section-intro reveal">
+            <p class="step-label"><b aria-hidden="true">2</b>שלב 2 מתוך 4</p>
+            <h2 id="contactsTitle">למי פונים עם מה?</h2>
+            <p class="lead-text">בפגישה תפגשו כמה אנשי צוות, וכל גורם מטפל אחראי על נושאים אחרים. הפכו כל כרטיס כדי לראות באילו נושאים כדאי לפנות אליו.</p>
+          </div>
+          <div class="col-md-7">
+            <!-- Cards are built by JavaScript from contactsData (js/contacts-data.js). -->
+            <ul id="contactCards" class="row row-cols-1 row-cols-sm-2 row-cols-md-1 row-cols-lg-2 g-3 list-unstyled contact-cards reveal"></ul>
+          </div>
+        </div>
+      </div>
+      <svg class="section-wave" viewBox="0 0 1440 96" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+        <use href="#wave-shape"/>
+      </svg>
+    </section>
+    <!-- Step 3: practice quiz (3 questions with hints and feedback), reported to the LMS. -->
+    <section id="practice" class="section band practice" data-step="3" aria-labelledby="practiceTitle">
+      <div class="brand-marks" aria-hidden="true"></div>
+      <div class="container">
+        <div class="row g-4 gx-lg-5 align-items-start">
+          <div class="col-md-5 section-intro reveal">
+            <p class="step-label"><b aria-hidden="true">3</b>שלב 3 מתוך 4</p>
+            <h2 id="practiceTitle">מתרגלים לקראת הפגישה</h2>
+            <p class="lead-text">נסו לזהות מה חסר ליעל, לבחור שאלת בירור מתאימה ולהחליט למי לפנות. שלוש שאלות, עם משוב אחרי כל תשובה.</p>
+          </div>
+          <div class="col-md-7 reveal">
+            <div class="paper-sheet worksheet" data-remaining="3">
+              <div class="sheet-head d-flex flex-wrap align-items-center justify-content-between gap-2"><span>תיק הפגישה של יעל</span><span class="doc-tag">דף תרגול</span></div>
+              <form id="quiz" novalidate>
+                <div class="quiz-progress d-flex flex-wrap align-items-center gap-3">
+                  <span id="stepLabel">שאלה 1 מתוך 3</span>
+                  <div id="stepMeter" class="stepper" aria-hidden="true"><span class="done">1</span><i></i><span>2</span><i></i><span>3</span></div>
+                  <button type="button" id="scoreInfoButton" class="info-toggle" aria-expanded="false" aria-controls="scoreInfo"><svg class="icon info-icon" aria-hidden="true"><use href="#i-info"/></svg>איך נקבע הציון?</button>
+                </div>
+                <div id="scoreInfo" class="score-info d-none">
+                  <p>רק הבדיקה הראשונה בכל שאלה נחשבת לציון. אם טעיתם, אפשר לנסות שוב ולהמשיך, אבל הציון לא ישתנה.</p>
+                  <!-- Filled by JavaScript from the points in quizData (js/quiz-data.js). -->
+                  <ul id="scorePoints"></ul>
+                  <p>רמז מוריד נקודות רק אם פתחתם אותו לפני הבדיקה הראשונה. בשאלת ההתאמה צריך שכל ההתאמות יהיו נכונות. כדי לעבור צריך לצבור לפחות 60 נקודות. הציון יישלח רק בלחיצה על ״סיום והגשת הלומדה״ בסוף היחידה.</p>
+                </div>
+                <fieldset><legend tabindex="-1">איזו שאלה תעזור לצוות להבין בדיוק מה יעל צריכה לברר?</legend><p class="hint">בחרו תשובה אחת, המתאימה ביותר.</p>
+                  <label><input class="form-check-input" type="radio" name="wording" value="general">איפה הפגישה?</label>
+                  <label><input class="form-check-input" type="radio" name="wording" value="specific">בזימון שלי מופיעה השעה. לאיזה בניין ולאיזו קומה עליי להגיע?</label>
+                  <label><input class="form-check-input" type="radio" name="wording" value="summary">איך מתכוננים לפגישה?</label>
+                </fieldset>
+                <fieldset hidden aria-describedby="caseText"><legend tabindex="-1">איזו פנייה לצוות תעזור ליעל להגיע לפגישה מוכנה?</legend>
+                  <p id="caseText" class="case-text"><strong>המקרה:</strong> בזימון של יעל כתוב שהפגישה ביום שני, <bdi>14.12</bdi>. בדף המידע כתוב יום רביעי, <bdi>16.12</bdi>, ושיש להביא ״את המסמכים הרפואיים הנדרשים״.</p>
+                  <p class="hint">בחרו תשובה אחת, המתאימה ביותר.</p>
+                  <!-- Each answer's text is in one <span>, so the flex label keeps it as one sentence (dates in <bdi> would otherwise split it). -->
+                  <label><input class="form-check-input" type="radio" name="request" value="date"><span>ראיתי שני תאריכים שונים במסמכים. מתי בדיוק הפגישה שלי?</span></label>
+                  <label><input class="form-check-input" type="radio" name="request" value="documents"><span>אילו מסמכים רפואיים אני צריכה להביא איתי לפגישה?</span></label>
+                  <label><input class="form-check-input" type="radio" name="request" value="both"><span>בזימון כתוב <bdi>14.12</bdi> ובדף המידע <bdi>16.12</bdi>. מה התאריך הנכון, ואילו מסמכים רפואיים עליי להביא?</span></label>
+                  <label><input class="form-check-input" type="radio" name="request" value="guess"><span>אגיע בתאריך שבזימון, כי הוא נשלח ראשון, ואביא את כל המסמכים שיש לי.</span></label>
+                </fieldset>
+                <fieldset hidden><legend tabindex="-1">התאימו כל שאלה לאיש הצוות שכדאי לפנות אליו.</legend><p class="hint">בחרו מהרשימה ליד כל שאלה את איש הצוות המתאים לפנייה.</p>
+                  <div class="match-row"><label for="match1">לאיזה בניין ולאיזו קומה עליי להגיע?</label>
+                    <select id="match1" class="form-select"><option value="">בחרו למי לפנות</option><option value="coordinator">מתאמת הניתוחים</option><option value="clinic">צוות המרפאה</option><option value="doctor">הרופא או הרופאה</option><option value="anesthesia">צוות ההרדמה</option></select></div>
+                  <div class="match-row"><label for="match2">אילו מסמכים רפואיים עליי להביא לפגישה?</label>
+                    <select id="match2" class="form-select"><option value="">בחרו למי לפנות</option><option value="coordinator">מתאמת הניתוחים</option><option value="clinic">צוות המרפאה</option><option value="doctor">הרופא או הרופאה</option><option value="anesthesia">צוות ההרדמה</option></select></div>
+                  <div class="match-row"><label for="match3">איזה סוג הרדמה מתוכנן עבורי?</label>
+                    <select id="match3" class="form-select"><option value="">בחרו למי לפנות</option><option value="coordinator">מתאמת הניתוחים</option><option value="clinic">צוות המרפאה</option><option value="doctor">הרופא או הרופאה</option><option value="anesthesia">צוות ההרדמה</option></select></div>
+                </fieldset>
+                <p class="feedback" id="quizFeedback" role="status" aria-atomic="true"></p>
+                <div class="quiz-actions d-flex flex-wrap align-items-center gap-3"><button id="check" class="action" type="submit">בדיקת התשובה</button><button id="advance" class="action" type="button" disabled hidden>לשאלה הבאה</button><button id="back" class="text-button" type="button" hidden>לשאלה הקודמת</button></div>
+              </form>
+              <div id="finished" hidden><h3 tabindex="-1">השלמתם את שלוש השאלות</h3><p id="submitResult" role="status" aria-atomic="true"></p><p>עכשיו אפשר להכין רשימה משלכם: מה עדיין חסר לכם, ולמי תפנו כדי לברר?</p><a class="action" href="#notes">לרשימת השאלות שלי</a> <button type="button" class="text-button" id="restart">תרגול חוזר ללא שינוי ציון</button></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <svg class="section-wave" viewBox="0 0 1440 96" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+        <use href="#wave-shape"/>
+      </svg>
+    </section>
+    <!-- Step 4: my own question list for the meeting (form + copy). -->
+    <section id="notes" class="section band notepad" data-step="4" aria-labelledby="notesTitle">
+      <div class="brand-marks" aria-hidden="true"></div>
+      <div class="container">
+        <div class="row g-4 gx-lg-5 align-items-start">
+          <div class="col-md-5 section-intro reveal">
+            <p class="step-label"><b aria-hidden="true">4</b>שלב 4 מתוך 4</p>
+            <h2 id="notesTitle">השאלות שלי לפגישה</h2>
+            <p class="lead-text">חשבו על פרט שעדיין חסר לכם. כתבו שאלה ובחרו למי להפנות אותה.</p>
+          </div>
+          <div class="col-md-7 reveal">
+            <div class="paper-sheet ruled personal-page">
+              <div class="sheet-head d-flex flex-wrap align-items-center justify-content-between gap-2"><span>השאלות שלי לפגישה</span><span class="doc-tag">דף אישי</span></div>
+              <form id="noteForm" novalidate>
+                <div class="row g-3">
+                  <div class="col-md-6"><label for="gap">מה חסר לי? (לא חובה)</label><input class="form-control" id="gap" placeholder="למשל, מקום הפגישה"></div>
+                  <div class="col-md-6"><label for="recipient">למי אפנה?</label><select id="recipient" class="form-select" required aria-describedby="recipientError"><option value="">בחרו למי לפנות</option><option>למתאמת הניתוחים</option><option>לצוות המרפאה</option><option>לרופא או לרופאה</option><option>לצוות ההרדמה</option><option>ארצה לברר למי לפנות</option></select><div id="recipientError" class="invalid-feedback">בחרו למי תפנו את השאלה.</div></div>
+                  <div class="col-12"><label for="myQuestion">מה אשאל?</label><input required id="myQuestion" class="form-control" placeholder="למשל: לאיזה בניין ולאיזו קומה עליי להגיע?" aria-describedby="myQuestionError"><div id="myQuestionError" class="invalid-feedback">כתבו שאלה לפני ההוספה לרשימה.</div></div>
+                </div>
+                <button class="action" type="submit">הוספה לרשימה <span aria-hidden="true">＋</span></button>
+              </form>
+              <ol id="questionList"></ol>
+              <button type="button" class="action" id="copy" hidden>העתקת רשימת השאלות <span class="copy-icon" aria-hidden="true"></span></button>
+              <textarea id="manualCopy" class="form-control" aria-label="הרשימה להעתקה ידנית" readonly hidden></textarea>
+              <p role="status" id="noteStatus" aria-atomic="true"></p>
+              <small class="privacy-note">הרשימה נשארת בחלון הזה בלבד. אפשר להעתיק אותה לפני היציאה. אין להזין פרטים מזהים.</small>
+            </div>
+          </div>
+        </div>
+      </div>
+      <svg class="section-wave" viewBox="0 0 1440 96" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+        <use href="#wave-shape"/>
+      </svg>
+    </section>
+    <div class="container">
+      <!-- More information: links to the Ichilov website. -->
+      <section id="more" class="section resources" data-step="5" aria-labelledby="moreTitle">
+        <div class="brand-marks" aria-hidden="true"></div>
+        <div class="row g-4 gx-lg-5">
+          <div class="col-md-5 resource-heading reveal"><h2 id="moreTitle">עוד מידע מאיכילוב</h2><p>רוצים לקרוא עוד לקראת הפגישה? כאן תמצאו מידע נוסף באתר איכילוב. הקישורים נפתחים בלשונית חדשה, כדי שתוכלו לחזור לכאן בקלות.</p></div>
+          <div class="col-md-7 resource-links reveal">
+            <a href="https://www.tasmc.org.il/unit-index-page/surgery/before-surgery/" target="_blank" rel="noopener noreferrer"><strong>לקראת פגישת טרום ניתוח <svg class="icon" aria-hidden="true"><use href="#i-external"/></svg></strong><span>מידע על הביקור במרפאה, הצוות שתפגשו והמסמכים שכדאי להכין.</span></a>
+            <a href="https://www.tasmc.org.il/unit-index-page/surgery/anesthesiology/pre-anesthesia/" target="_blank" rel="noopener noreferrer"><strong>לקראת פגישת טרום הרדמה <svg class="icon" aria-hidden="true"><use href="#i-external"/></svg></strong><span>מידע על הפגישה עם צוות ההרדמה ועל הנושאים שתוכלו לברר בה.</span></a>
+            <a href="https://www.tasmc.org.il/unit-index-page/surgery/anesthesiology/" target="_blank" rel="noopener noreferrer"><strong>על הרדמה וטיפול בכאב <svg class="icon" aria-hidden="true"><use href="#i-external"/></svg></strong><span>היכרות עם מערך ההרדמה, הטיפול בכאב והשירותים שהוא מציע.</span></a>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- End of the unit: the score is submitted to the LMS only here. The button works after the quiz and after
+         every part of the unit was on screen; until then aria-disabled keeps it reachable, with the note explaining why. -->
+    <section id="finish" class="section finish" aria-label="סיום והגשת הלומדה">
+      <div class="container finish-area">
+        <button type="button" id="finishUnit" class="action" aria-disabled="true" aria-describedby="finishHint">סיום והגשת הלומדה</button>
+        <span id="finishHint" class="visually-hidden">עד לסיום התרגול והמעבר על כל חלקי היחידה</span>
+        <p id="finishNote" class="finish-note">הכפתור יופעל אחרי מענה על שאלות התרגול ומעבר על כל חלקי היחידה.</p>
+        <p id="finishStatus" class="finish-status" role="status" aria-atomic="true"></p>
+      </div>
+    </section>
+  </main>
+  <!-- Footer: quick navigation, contact link and credits. -->
+  <footer class="site-footer">
+    <div class="container wide footer-inner">
+      <div class="row g-4 gx-lg-5">
+        <div class="col-md-6 footer-title d-flex align-items-center gap-3 gap-lg-4">
+          <a class="hospital-link footer-mark-link" href="https://www.tasmc.org.il/" target="_blank" rel="noopener noreferrer"><img class="footer-mark" src="assets/ichilov-mark.svg" alt="האתר הרשמי של איכילוב (נפתח בלשונית חדשה)"></a>
+          <div><p>מגיעים מוכנים<br>לפגישת טרום ניתוח</p>
+          <a href="#intro">חזרה לראש העמוד</a></div>
+        </div>
+        <nav aria-label="ניווט מהיר" class="col-md-6 footer-nav">
+          <h2>ניווט מהיר</h2>
+          <ul class="row row-cols-2 gx-3 gy-0 list-unstyled m-0">
+            <li><a href="#dossier">התיק של יעל</a></li>
+            <li><a href="#contacts">למי פונים עם מה?</a></li>
+            <li><a href="#practice">מתרגלים לקראת הפגישה</a></li>
+            <li><a href="#notes">השאלות שלי לפגישה</a></li>
+            <li><a href="#more">עוד מידע מאיכילוב</a></li>
+            <li><a href="https://www.tasmc.org.il/service-info/crmtpa/" target="_blank" rel="noopener noreferrer" aria-label="צרו קשר עם איכילוב (נפתח בלשונית חדשה)">צרו קשר</a></li>
+          </ul>
+        </nav>
+        <section class="col-12 footer-credits" aria-labelledby="credits-title">
+          <h2 id="credits-title">
+            <button type="button" id="creditsToggle" class="credits-toggle" aria-expanded="false" aria-controls="creditsContent">קרדיטים</button>
+          </h2>
+          <div id="creditsContent" class="d-none">
+            <ul class="list-unstyled m-0">
+              <li>עיצוב ורספונסיביות: <a href="https://getbootstrap.com/" target="_blank" rel="noopener noreferrer">Bootstrap 5.3.2<span class="visually-hidden"> (נפתח בלשונית חדשה)</span></a> (רישיון MIT)</li>
+              <li>חיבור למערכת הלמידה: <a href="https://github.com/pipwerks/scorm-api-wrapper" target="_blank" rel="noopener noreferrer">pipwerks SCORM API Wrapper<span class="visually-hidden"> (נפתח בלשונית חדשה)</span></a> (רישיון MIT)</li>
+              <li>גופן: <a href="https://github.com/googlefonts/rubik" target="_blank" rel="noopener noreferrer">Rubik<span class="visually-hidden"> (נפתח בלשונית חדשה)</span></a> (רישיון SIL OFL 1.1)</li>
+              <li>הקוד פותח והטקסטים נוסחו בסיוע כלי AI (Claude ו־Codex), ונבדקו ואושרו על ידי הצוות.</li>
+              <li>האיורים בכרטיסי ״למי פונים עם מה?״ נוצרו עבור היחידה בקוד SVG בסיוע כלי AI (Claude).</li>
+              <li>הלוגו של איכילוב שייך למרכז הרפואי תל אביב ומשמש כאן לצורכי לימוד בלבד.</li>
+            </ul>
+            <p>היחידה פותחה כפרויקט לימודי בקורס תכנות 3. המקרה של יעל בדוי.</p>
+          </div>
+        </section>
+        <p class="col-12 footnote"><bdi dir="ltr">© 2026</bdi> מגיעים מוכנים לפגישת טרום ניתוח. כל הזכויות שמורות.</p>
+      </div>
+    </div>
+  </footer>
+  <!-- Glossary: each explanation is written once here. The term bubbles in the text take their wording from this list. -->
+  <div class="modal fade" id="glossary" tabindex="-1" aria-labelledby="glossaryTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title" id="glossaryTitle">מושגים חשובים</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="סגירה"></button>
+        </div>
+        <div class="modal-body">
+          <dl class="glossary-list">
+            <dt data-forms="זימון|זימונים">זימון</dt>
+            <dd>הודעה מבית החולים שבה כתוב מתי ואיפה תתקיים הפגישה שלכם.</dd>
+            <dt data-forms="פגישת טרום ניתוח|פגישת טרום הניתוח|פגישות טרום ניתוח">פגישת טרום ניתוח</dt>
+            <dd>פגישה במרפאה לפני הניתוח. בפגישה הצוות בודק את המוכנות שלכם לניתוח, ותוכלו לשאול שאלות על מה שמצפה לכם.</dd>
+            <dt data-forms="דף מידע|דף המידע|דפי מידע">דף מידע</dt>
+            <dd>מסמך שהמרפאה שולחת לפני הפגישה. הוא מסביר איך להתכונן לפגישה ומה להביא אליה.</dd>
+            <dt data-forms="שאלת בירור|שאלות בירור">שאלת בירור</dt>
+            <dd>שאלה שעוזרת לכם להשלים פרט שחסר לכם או להבין משהו שלא היה ברור. למשל, ״אילו מסמכים צריך להביא לפגישה?״</dd>
+            <dt data-forms="גורם מטפל|גורם המטפל|גורמים מטפלים|גורמים המטפלים">גורם מטפל</dt>
+            <dd>איש או אשת צוות שאחראים על חלק מהטיפול או מההכנה לניתוח, כמו מתאמת הניתוחים, הרופא או המרדים.</dd>
+          </dl>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="action" data-bs-dismiss="modal">סגירה</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

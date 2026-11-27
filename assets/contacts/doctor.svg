@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 180">
+  <!-- Doctor: white coat, stethoscope and a care plan board -->
+  <rect width="320" height="180" fill="#eaf5fb"/>
+  <circle cx="225" cy="98" r="72" fill="#d5ebf5"/>
+  <circle cx="26" cy="152" r="7" fill="#c4e4f1"/>
+  <circle cx="294" cy="22" r="5" fill="#c4e4f1"/>
+  <!-- Care plan board: from surgery to recovery -->
+  <g transform="translate(30 30)">
+    <rect width="104" height="86" rx="9" fill="#fff" stroke="#c9dbe6" stroke-width="2"/>
+    <rect x="12" y="12" width="44" height="6" rx="3" fill="#0c2e82"/>
+    <path d="M18 62h68" stroke="#dbe8f0" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="20" cy="62" r="8" fill="#0c2e82"/>
+    <circle cx="52" cy="62" r="8" fill="#1b9ec6"/>
+    <circle cx="84" cy="62" r="8" fill="#fff" stroke="#1b9ec6" stroke-width="3"/>
+    <path d="M80 62l3 3 5-6" fill="none" stroke="#1b9ec6" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M52 30v14M45 37h14" stroke="#3dbee3" stroke-width="4" stroke-linecap="round"/>
+  </g>
+  <!-- Doctor -->
+  <path d="M168 180c0-36 18-54 42-54s42 18 42 54z" fill="#fff" stroke="#c9dbe6" stroke-width="2"/>
+  <path d="M198 128l12 22 12-22z" fill="#1b9ec6"/>
+  <path d="M198 128l-6 52M222 128l6 52" stroke="#c9dbe6" stroke-width="2"/>
+  <rect x="203" y="104" width="14" height="16" rx="5" fill="#d29d7a"/>
+  <circle cx="210" cy="88" r="21" fill="#e8b48f"/>
+  <path d="M189 86c0-18 9-27 21-27s21 9 21 27c-6-7-12-10-21-10s-15 3-21 10z" fill="#8a8f99"/>
+  <circle cx="203" cy="90" r="2" fill="#1f2d4d"/>
+  <circle cx="217" cy="90" r="2" fill="#1f2d4d"/>
+  <path d="M204 98q6 5 12 0" fill="none" stroke="#1f2d4d" stroke-width="2" stroke-linecap="round"/>
+  <!-- Stethoscope -->
+  <path d="M194 126q-6 26 10 30q14 2 14-14v-16" fill="none" stroke="#0c2e82" stroke-width="3.5" stroke-linecap="round"/>
+  <circle cx="218" cy="160" r="6" fill="#0c2e82"/>
+  <circle cx="218" cy="160" r="2.5" fill="#3dbee3"/>
+  <path d="M218 142v12" stroke="#0c2e82" stroke-width="3.5" stroke-linecap="round"/>
+</svg>

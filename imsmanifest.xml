@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest identifier="ArrivingPreparedSCORM12" version="1.0"
+ xmlns="http://www.imsproject.org/xsd/imscp_rootv1p1p2"
+ xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_rootv1p2">
+ <metadata><schema>ADL SCORM</schema><schemaversion>1.2</schemaversion></metadata>
+ <organizations default="org1"><organization identifier="org1">
+  <title>מגיעים מוכנים</title>
+  <item identifier="item1" identifierref="resource1" isvisible="true"><title>הכנה לפגישת טרום ניתוח</title></item>
+ </organization></organizations>
+ <resources><resource identifier="resource1" type="webcontent" adlcp:scormType="sco" href="index.html">
+      <file href="index.html"/>
+      <file href="css/style.css"/>
+      <file href="css/bootstrap.rtl.min.css"/>
+      <file href="js/bootstrap.bundle.min.js"/>
+      <file href="js/quiz-data.js"/>
+      <file href="js/contacts-data.js"/>
+      <file href="js/main.js"/>
+      <file href="js/scorm.js"/>
+      <file href="js/scorm-api-wrapper.js"/>
+      <file href="assets/ichilov-mark.svg"/>
+      <file href="assets/ichilov.svg"/>
+      <file href="assets/contacts/coordinator.svg"/>
+      <file href="assets/contacts/clinic.svg"/>
+      <file href="assets/contacts/doctor.svg"/>
+      <file href="assets/contacts/anesthesia.svg"/>
+      <file href="assets/fonts/rubik-license.txt"/>
+      <file href="assets/fonts/rubik.woff2"/>
+ </resource></resources>
+</manifest>

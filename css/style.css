@@ -1,0 +1,434 @@
+/* ==========================================================
+   Fonts
+   ========================================================== */
+@font-face {
+  font-family: Rubik;
+  src: url("../assets/fonts/rubik.woff2") format("woff2");
+  font-weight: 400 700;
+  font-display: swap;
+}
+
+/* ==========================================================
+   Variables
+   Text colours were chosen for WCAG 2.1 AA contrast (4.5:1 or more).
+   --teal and --teal-light are for icons and decoration only.
+   ========================================================== */
+:root {
+  --navy: #0c2e82;
+  --ink: #102e6b;
+  --muted: #4a5f72;
+  --teal: #1b9ec6;
+  --teal-light: #3dbee3;
+  --teal-dark: #0b6f98;
+  --sky: #e8f4fa;
+  --bg: #f4f8fb;
+  --line: #d6e2ec;
+  --paper: #fff;
+  --ruled-line: #e9f0f5;
+  --margin-line: #f2c9c9;
+  --missing-bg: #fdf1e3;
+  --missing-text: #8a4b14;
+  --success-bg: #e7f4ec;
+  --success-text: #23704a;
+  --retry-bg: #fbede5;
+  --retry-text: #84432f;
+  --folder-teal: #2aa8d2;
+  --footer-soft: #c9d7ef;
+  /* Solid section colours, so each wave matches the section below it exactly. */
+  --hero-bg: linear-gradient(180deg, #ffffff, #e6f3fa);
+  --dossier-bg: #ffffff;
+  --contacts-bg: var(--sky);
+  --practice-bg: var(--dossier-bg);
+  --notes-bg: #e3eff0;
+  --radius: 1rem;
+  --shadow-sm: 0 1px 2px #0c2e8210, 0 2px 8px #0c2e820d;
+  --shadow-md: 0 2px 4px #0c2e8212, 0 12px 32px #0c2e821a;
+  --bar-height: 4.5rem;
+  --wave-height: clamp(2rem, 4.2vw, 4rem);
+}
+
+/* ==========================================================
+   Base
+   ========================================================== */
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: Rubik, Arial, sans-serif; line-height: 1.65; }
+.container { max-width: 1160px; padding-inline: clamp(1.125rem, 4vw, 3.625rem); }
+.container.wide { max-width: 1440px; }
+body :focus-visible { outline: 3px solid var(--teal-dark); outline-offset: 3px; }
+.skip { position: absolute; top: -6rem; z-index: 1040; background: white; padding: .75rem; }
+.skip:focus { top: 0; }
+h1, h2, h3 { font-weight: 700; letter-spacing: -.02em; }
+.icon { width: 1.25em; height: 1.25em; flex-shrink: 0; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.action { display: inline-flex; align-items: center; justify-content: center; gap: .6rem; padding: .8rem 1.5rem; border: 0; border-radius: 2rem; background: var(--navy); color: white; font-weight: 600; text-decoration: none; box-shadow: 0 6px 18px #0c2e8233; }
+.action:hover { background: #163f97; color: white; }
+.text-button { border: 0; padding: .65rem; background: transparent; color: var(--navy); font-weight: 500; text-decoration: underline; text-underline-offset: 4px; }
+
+/* ==========================================================
+   Header: fixed top bar, main navigation and scroll progress
+   ========================================================== */
+.site-header { padding-top: var(--bar-height); }
+.top-bar { position: fixed; inset: 0 0 auto; z-index: 1030; background: #ffffffeb; backdrop-filter: blur(12px); border-bottom: 1px solid transparent; transition: box-shadow .3s ease, border-color .3s ease; }
+/* Gaps and side padding in px, so the header row keeps fitting on phones when the text is enlarged. */
+.top-bar > .container { gap: 8px; padding-block: .7rem; padding-inline: 12px; transition: padding-block .3s ease; }
+.top-bar.scrolled { box-shadow: var(--shadow-sm); border-color: var(--line); }
+.top-bar.scrolled > .container { padding-block: .35rem; }
+/* Header controls use px, so the header row keeps fitting on phones when the text is enlarged. */
+.logo { display: block; width: 64px; transition: width .3s ease; }
+.hospital-link { display: inline-flex; align-items: center; min-height: 44px; }
+.nav-button { min-width: 40px; min-height: 40px; padding: 6px 10px; border: 1px solid var(--line); border-radius: 2rem; background: white; color: var(--navy); font-size: 16px; font-weight: 600; }
+/* Round icon button in the top bar (the glossary). Its name appears in a tooltip. */
+.bar-button { display: inline-grid; place-items: center; width: 40px; height: 40px; padding: 0; border: 1px solid var(--line); border-radius: 50%; background: white; color: var(--navy); }
+.bar-button .icon { width: 22px; height: 22px; }
+.bar-button:hover { border-color: var(--teal); background: var(--sky); }
+/* On phones the menu button shows only the icon; screen readers still hear "תפריט". */
+.nav-button-text { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.main-nav { display: flex; flex-basis: 100%; flex-direction: column; gap: .2rem; padding-bottom: .5rem; }
+.main-nav a { display: inline-flex; align-items: center; min-height: 44px; padding: .4rem .9rem; border-radius: 2rem; color: var(--ink); font-weight: 500; text-decoration: none; transition: background-color .25s ease, color .25s ease; }
+.main-nav a:hover { background: var(--sky); }
+.main-nav a[aria-current] { background: var(--navy); color: white; }
+.nav-step { display: inline-grid; place-items: center; width: 1.45rem; height: 1.45rem; margin-inline-end: .4rem; border-radius: 50%; background: var(--sky); color: var(--navy); font-size: .78rem; font-weight: 700; }
+.main-nav a[aria-current] .nav-step { background: #ffffff33; color: white; }
+/* Text size: everything uses rem, so changing the root size enlarges all text. */
+html.text-large { font-size: 115%; }
+html.text-xlarge { font-size: 130%; }
+/* The three size buttons sit in one frame; each "א" is shown in the size it gives. */
+.text-size { display: inline-flex; gap: 2px; margin-inline-start: auto; padding: 3px; border: 1px solid var(--line); border-radius: 2rem; background: white; }
+.size-button { display: inline-grid; place-items: center; width: 34px; height: 34px; padding: 0; border: 0; border-radius: 50%; background: transparent; color: var(--navy); font-size: 14px; font-weight: 700; line-height: 1; }
+.size-button.size-large { font-size: 18px; }
+.size-button.size-xlarge { font-size: 23px; }
+/* The folder illustration gets taller with larger text, so its label stays inside. */
+html.text-large .folder { aspect-ratio: 1.05; }
+html.text-xlarge .folder { aspect-ratio: .9; }
+/* From 360px there is room for a bigger logo and buttons, and a less tall folder. */
+@media only screen and (min-width: 360px) {
+  html.text-large .folder { aspect-ratio: 1.25; }
+  html.text-xlarge .folder { aspect-ratio: 1.05; }
+}
+/* From 420px the top bar has room for the bigger logo and buttons (below that they stay small, so the row fits from 360px). */
+@media only screen and (min-width: 420px) {
+  .logo { width: 80px; }
+  .size-button { width: 38px; height: 38px; }
+  .bar-button, .nav-button { min-width: 44px; min-height: 44px; }
+  .bar-button { width: 44px; height: 44px; }
+}
+.size-button:hover { background: var(--sky); }
+.size-button[aria-pressed="true"] { background: var(--navy); color: white; }
+/* Tooltips (Bootstrap) in the unit's colours. */
+.bar-tooltip { --bs-tooltip-bg: var(--navy); --bs-tooltip-opacity: 1; --bs-tooltip-font-size: .9rem; --bs-tooltip-padding-x: .75rem; --bs-tooltip-padding-y: .4rem; font-family: inherit; }
+/* Used while measuring the header, so its height is read without the shrink animation. */
+.top-bar.no-transition, .top-bar.no-transition * { transition: none !important; }
+.scroll-progress { position: absolute; inset: auto 0 -1px; height: 3px; }
+.scroll-progress span { display: block; width: 0; height: 100%; border-radius: 0 3px 3px 0; background: linear-gradient(90deg, var(--teal-light), var(--navy)); }
+
+/* ==========================================================
+   Cover (page intro)
+   ========================================================== */
+.cover { position: relative; isolation: isolate; overflow-x: clip; padding-top: 1rem; background: var(--hero-bg); }
+.hero { min-height: clamp(26rem, 39vw, 38rem); padding-block: clamp(1.5rem, 4vw, 3.5rem); }
+.hero-copy { max-width: 36.875rem; margin-inline: auto; }
+.learner-greeting { display: flex; align-items: center; gap: .5rem; color: var(--muted); font-weight: 500; overflow-wrap: anywhere; }
+.learner-greeting .icon { color: var(--teal-dark); }
+.lms-notice { color: var(--ink); background: #fff3d3; padding: .7rem .9rem; border-radius: .6rem; font-size: .95rem; overflow-wrap: anywhere; }
+/* Shown under the notice when the learner returns to a stopped attempt. */
+.resume-button { margin-bottom: 1rem; }
+.pill { display: inline-flex; align-items: center; gap: .45rem; padding: .35rem .9rem; border: 1px solid var(--line); border-radius: 2rem; background: white; color: var(--teal-dark); font-size: .92rem; font-weight: 600; box-shadow: var(--shadow-sm); }
+.pill span { margin-inline: .1rem; }
+.cover h1 { margin-block: 1rem 1.1rem; color: var(--navy); font-size: clamp(2.4rem, 5vw, 4.4rem); line-height: 1.05; }
+.cover h1 em { font-style: normal; color: var(--teal-dark); }
+.story { max-width: 34rem; margin-bottom: 1.6rem; color: var(--muted); font-size: 1.12rem; }
+.cover-wave { display: block; width: 100%; height: clamp(3rem, 6.5vw, 7rem); margin-bottom: -1px; color: var(--dossier-bg); pointer-events: none; }
+/* Motion button in the top bar: a pause sign (two bars) while moving, a play sign when paused. */
+.motion-icon { width: 12px; height: 14px; border-inline: 4px solid currentColor; }
+.motion-button[aria-pressed="true"] .motion-icon { width: 0; height: 0; margin-inline-start: 3px; border-inline: 0; border-top: 8px solid transparent; border-bottom: 8px solid transparent; border-left: 13px solid currentColor; }
+
+/* ==========================================================
+   Folder illustration: Yael's case file
+   ========================================================== */
+.scene { display: grid; place-items: center; min-width: 0; padding-block: 1.5rem 1rem; }
+.folder { position: relative; width: min(92%, 30rem); aspect-ratio: 1.45; transform: rotate(-3deg); filter: drop-shadow(0 24px 30px #0c2e8230); }
+.folder-back { position: absolute; inset: 14% 0 0; border-radius: 1.1rem; background: linear-gradient(160deg, var(--folder-teal), var(--teal-dark)); }
+.folder-back::before { content: ""; position: absolute; inset: -1.1rem auto auto 8%; width: 38%; height: 2.2rem; border-radius: .8rem .8rem 0 0; background: var(--folder-teal); }
+.doc { position: absolute; top: 2%; display: flex; flex-direction: column; align-items: flex-start; gap: .4rem; width: 31%; height: 62%; padding: .8rem .75rem; border: 1px solid var(--line); border-radius: .7rem; background: white; color: var(--ink); font-size: .92rem; font-weight: 600; text-align: start; box-shadow: var(--shadow-sm); }
+.doc::before { content: ""; position: absolute; inset: 0 0 auto; height: 5px; border-radius: .7rem .7rem 0 0; background: var(--teal-light); }
+.doc .icon { width: 1.5rem; height: 1.5rem; margin-top: .3rem; color: var(--teal-dark); }
+.doc i { display: block; width: 80%; height: 4px; border-radius: 2px; background: #e5edf3; }
+.doc i + i { width: 60%; }
+.doc-1 { right: 5%; transform: rotate(4deg); }
+.doc-2 { right: 34.5%; transform: rotate(-1deg) translateY(-6px); }
+.doc-3 { right: 64%; transform: rotate(-5deg); }
+.doc:is(:hover, :focus-visible) { z-index: 2; transform: translateY(-1.5rem) rotate(0); box-shadow: var(--shadow-md); text-decoration: underline; text-underline-offset: 4px; }
+.folder-front { position: absolute; inset: 34% 0 0; display: flex; flex-direction: column; justify-content: space-between; padding: clamp(1rem, 2.4vw, 1.6rem); border-radius: .5rem 1.1rem 1.1rem .5rem; border-inline-start: 6px solid var(--teal); background: linear-gradient(170deg, #fff, #eef7fb); box-shadow: inset 0 -3px 0 #d3e6ef; pointer-events: none; }
+.file-label { display: flex; align-items: center; justify-content: space-between; gap: .5rem; color: var(--muted); font-size: .85rem; }
+.file-label img { width: 40%; max-width: 9rem; }
+.file-name { color: var(--navy); font-size: clamp(1.7rem, 3vw, 2.6rem); font-weight: 800; line-height: 1.1; }
+.file-meta { display: flex; align-items: center; justify-content: space-between; gap: .5rem; padding-top: .6rem; border-top: 1px dashed #b9cfdb; color: var(--muted); font-size: .9rem; }
+/* The date stays on one line and the barcode shrinks, so large text still fits on narrow phones. */
+.file-meta span { display: inline-flex; align-items: center; gap: .35rem; white-space: nowrap; }
+.barcode { width: min(5.5rem, 25%); height: 1.3rem; opacity: .55; background: repeating-linear-gradient(90deg, var(--ink) 0 2px, transparent 2px 4px, var(--ink) 4px 5px, transparent 5px 8px); }
+
+/* ==========================================================
+   Learning steps (dossier, practice, notes) and waves
+   ========================================================== */
+.section { scroll-margin-top: calc(var(--bar-height) + 1rem); }
+.band { position: relative; isolation: isolate; padding-top: clamp(2.5rem, 6.5vw, 6rem); padding-bottom: calc(clamp(2.5rem, 5vw, 4.5rem) + var(--wave-height)); }
+.dossier { background: var(--dossier-bg); }
+.practice { background: var(--practice-bg); }
+.notepad { background: var(--notes-bg); }
+.step-label { display: inline-flex; align-items: center; gap: .65rem; margin-bottom: .9rem; color: var(--teal-dark); font-weight: 600; }
+.step-label b { display: inline-grid; place-items: center; width: 2rem; height: 2rem; border-radius: 50%; background: var(--teal-dark); color: white; font-size: .95rem; box-shadow: 0 0 0 6px #1b9ec622; }
+.section-intro h2 { max-width: 16ch; color: var(--navy); font-size: clamp(2.1rem, 4vw, 3.4rem); line-height: 1.08; }
+.lead-text { max-width: 32ch; margin-top: 1.1rem; color: var(--muted); font-size: 1.08rem; }
+.section-wave { position: absolute; inset: auto 0 -1px; display: block; width: 100%; height: var(--wave-height); pointer-events: none; }
+/* The fill path runs slightly past the box so the light stripe never shows as a line at the bottom edge. */
+.section-wave, .cover-wave { overflow: visible; }
+/* Each wave takes its fill from the section below. */
+.dossier > .section-wave { color: var(--contacts-bg); transform: scaleX(-1); }
+.contacts > .section-wave { color: var(--practice-bg); }
+.practice > .section-wave { color: var(--notes-bg); transform: scaleX(-1); }
+.notepad > .section-wave { color: var(--bg); }
+
+/* Ichilov marks: faint brand shapes behind the light sections, moved by JavaScript. */
+.brand-marks { position: absolute; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; }
+/* Position, size and speed are set at random by JavaScript. */
+.brand-mark { position: absolute; opacity: .08; }
+
+/* ==========================================================
+   Step 2: "who to ask" flip cards
+   ========================================================== */
+.contacts { background: var(--contacts-bg); }
+.contact-cards { margin: 0; }
+.flip-card { height: 100%; perspective: 1000px; cursor: pointer; }
+.flip-inner { position: relative; display: grid; height: 100%; transform-style: preserve-3d; }
+.flip-face { grid-area: 1 / 1; display: flex; flex-direction: column; align-items: flex-start; gap: .65rem; padding: 1.4rem; border: 1px solid var(--line); border-radius: var(--radius); background: white; box-shadow: var(--shadow-md); -webkit-backface-visibility: hidden; backface-visibility: hidden; }
+.flip-card:hover .flip-front { border-color: var(--teal); }
+.flip-back { border-color: var(--navy); background: var(--navy); color: white; transform: rotateY(180deg); }
+.flipped .flip-inner { transform: rotateY(180deg); }
+/* The illustration fills the top of the card, edge to edge (cancels the card padding). */
+.contact-illustration { display: block; width: calc(100% + 2.8rem); max-width: none; height: auto; aspect-ratio: 16 / 9; margin: -1.4rem -1.4rem .3rem; border-radius: calc(var(--radius) - 1px) calc(var(--radius) - 1px) 0 0; }
+.contact-role { margin: 0; color: var(--navy); font-size: 1.3rem; }
+.flip-back .contact-role { color: white; font-size: 1.05rem; }
+.contact-summary { margin: 0; color: var(--muted); }
+.contact-topics { margin: 0; padding-inline-start: 1.1rem; }
+.contact-topics li { margin-bottom: .2rem; }
+.contact-example { margin: 0; padding: .6rem .8rem; border-radius: .6rem; background: #ffffff1f; font-size: .95rem; }
+.flip-button { display: inline-flex; align-items: center; gap: .45rem; min-height: 44px; margin-top: auto; padding: .35rem 1rem; border: 1px solid var(--line); border-radius: 2rem; background: white; color: var(--navy); font-weight: 600; }
+.flip-back .flip-button { border-color: #ffffff80; background: transparent; color: white; }
+.flip-back :focus-visible { outline-color: white; }
+/* Glossary terms on the dark back of a card: light blue (7.9:1 on navy, 5.7:1 in the example box), white on hover. */
+.flip-back .term { color: #8fdcf2; }
+.flip-back .term:hover, .flip-back .term[aria-expanded="true"] { color: white; }
+
+/* ==========================================================
+   Paper sheets and document tabs
+   ========================================================== */
+.paper-sheet { position: relative; padding: clamp(1.25rem, 3vw, 2.25rem); border: 1px solid var(--line); border-radius: var(--radius); background: var(--paper); color: var(--ink); box-shadow: var(--shadow-md); }
+.paper-sheet.ruled { background: repeating-linear-gradient(to bottom, transparent 0 31px, var(--ruled-line) 31px 32px), var(--paper); background-position: 0 4.6rem; }
+.paper-sheet.ruled::before { content: ""; position: absolute; inset: 0 clamp(.6rem, 1.5vw, 1.2rem) 0 auto; width: 1px; background: var(--margin-line); pointer-events: none; }
+.sheet-head { padding-bottom: .9rem; margin-bottom: 1.2rem; border-bottom: 1px solid var(--line); color: var(--muted); font-size: .9rem; }
+.sheet-head img { height: 1.6rem; }
+.doc-tag { padding: .15rem .7rem; border-radius: 2rem; background: var(--sky); color: var(--teal-dark); font-size: .82rem; font-weight: 600; }
+.file-tabs { gap: .35rem; padding-inline: .5rem; }
+.file-tabs button { flex: 1; display: inline-flex; align-items: center; justify-content: center; gap: .45rem; padding: .65rem .4rem .55rem; font-size: .92rem; line-height: 1.3; border: 1px solid var(--line); border-bottom: 0; border-radius: .8rem .8rem 0 0; background: #eef4f8; color: var(--muted); font-weight: 500; scroll-margin-top: calc(var(--bar-height) + 1rem); }
+.file-tabs button[aria-selected="true"] { background: white; color: var(--navy); font-weight: 600; box-shadow: inset 0 3px 0 var(--teal); text-decoration: underline; text-underline-offset: 4px; }
+.file-tabs button:hover { color: var(--ink); }
+.file-tabs .icon { display: none; color: var(--teal-dark); }
+.file-sheet h3, .worksheet h3 { color: var(--navy); font-size: clamp(1.5rem, 2.6vw, 2.1rem); }
+.file-sheet blockquote, .written-list { max-width: 60ch; margin: 1rem 0 1.4rem; font-size: 1.1rem; }
+.file-sheet blockquote { padding-inline-start: 1rem; border-inline-start: 3px solid var(--line); }
+/* Subheadings in Yael's list: navy like the sheet heading (not teal like the glossary terms), a bit larger than the
+   question under them and smaller than the sheet heading. */
+.written-list dt { margin-top: .9rem; color: var(--navy); font-size: 1.2rem; font-weight: 700; }
+.written-list dt:first-child { margin-top: 0; }
+.written-list dd { margin-bottom: .55rem; }
+.clarity { display: grid; gap: .6rem; margin: 0; }
+.clarity li { display: flex; align-items: flex-start; gap: .75rem; padding: .8rem 1rem; border-radius: .75rem; }
+.clarity .icon { width: 1.4rem; height: 1.4rem; margin-top: .15rem; }
+.clarity strong { display: block; color: var(--ink); }
+.clarity .known { background: var(--success-bg); color: var(--success-text); }
+.clarity .missing { background: var(--missing-bg); color: var(--missing-text); }
+.clarity .helps { background: var(--sky); color: var(--teal-dark); }
+
+/* ==========================================================
+   Practice quiz
+   ========================================================== */
+.worksheet { --paper-edges: 0 3px 0 #ffffffcc, 0 4px 0 var(--line); }
+.worksheet[data-remaining="3"] { box-shadow: var(--shadow-md), var(--paper-edges), 0 8px 0 #ffffffb3, 0 9px 0 var(--line); }
+.worksheet[data-remaining="2"] { box-shadow: var(--shadow-md), var(--paper-edges); }
+.quiz-progress { margin-bottom: 1.25rem; color: var(--muted); font-size: .95rem; }
+.stepper { display: flex; align-items: center; flex: 1; min-width: 8rem; max-width: 14rem; }
+.stepper span { display: grid; place-items: center; width: 1.8rem; height: 1.8rem; border: 2px solid var(--line); border-radius: 50%; background: white; color: var(--muted); font-size: .8rem; font-weight: 700; transition: background-color .3s ease, border-color .3s ease, color .3s ease; }
+.stepper i { flex: 1; height: 2px; background: var(--line); transition: background-color .3s ease; }
+.stepper .done { border-color: var(--navy); background: var(--navy); color: white; }
+.stepper i.done { background: var(--navy); }
+.info-toggle { display: inline-flex; align-items: center; gap: .45rem; min-height: 44px; padding: 0 .25rem; border: 0; background: transparent; color: var(--navy); font-weight: 600; text-decoration: underline; text-underline-offset: 4px; }
+/* Same "i" icon as the glossary terms. */
+.info-icon { width: 1.3em; height: 1.3em; }
+/* Shared light box for the score explanation and the quiz feedback. */
+.score-info, .feedback:not(:empty) { padding: .85rem 1rem; border-radius: .75rem; background: var(--sky); }
+.score-info { margin-bottom: 1.25rem; }
+.score-info p { margin: 0; }
+.score-info ul { margin-block: .5rem; padding-inline-start: 1.25rem; }
+legend { float: none; color: var(--navy); font-weight: 600; font-size: clamp(1.2rem, 2.2vw, 1.5rem); line-height: 1.4; }
+.hint { color: var(--muted); }
+/* The case in question 2: a short note from Yael's file. */
+.case-text { margin-block: .75rem; padding: .85rem 1rem; border-inline-start: 4px solid var(--teal); border-radius: .5rem; background: var(--sky); }
+/* Hint button and the hint it opens. */
+.hint-row { display: flex; flex-wrap: wrap; align-items: center; column-gap: .75rem; margin-bottom: .5rem; }
+.hint-cost { color: var(--muted); font-size: .9rem; }
+.hint-toggle { display: inline-flex; align-items: center; gap: .45rem; min-height: 44px; padding: 0 .25rem; border: 0; background: transparent; color: var(--teal-dark); font-weight: 600; text-decoration: underline; text-underline-offset: 4px; }
+.hint-toggle[aria-expanded="true"] { color: var(--navy); }
+.hint-box { margin-bottom: 1rem; padding: .85rem 1rem; border: 1px dashed var(--teal); border-radius: .75rem; background: white; }
+fieldset label:has(> input) { display: flex; align-items: baseline; gap: .8rem; margin-bottom: .6rem; padding: .85rem 1rem; border: 1px solid var(--line); border-radius: .8rem; background: white; cursor: pointer; transition: border-color .2s ease, background-color .2s ease, box-shadow .2s ease; }
+fieldset label:has(> input):hover { border-color: var(--teal); }
+fieldset label:has(:checked) { border-color: var(--navy); background: #eef4ff; box-shadow: 0 0 0 3px #0c2e8218; }
+/* A locked question (answered correctly): the chosen answer stays marked, the others are faded and not clickable. */
+fieldset.locked label:has(> input) { cursor: default; }
+fieldset.locked label:has(> input):hover { border-color: var(--line); }
+fieldset.locked label:has(> input:not(:checked)) { opacity: .55; }
+.form-check-input { flex-shrink: 0; border-color: var(--muted); }
+/* Matching question: one question and one list of contacts per row. */
+.match-row { display: grid; gap: .45rem; margin-bottom: .6rem; padding: .85rem 1rem; border: 1px solid var(--line); border-radius: .8rem; background: white; }
+.match-row label { font-weight: 500; }
+.match-row .form-select { border-color: var(--muted); border-radius: .6rem; }
+.feedback:not(:empty) { margin-block: 1rem; border-inline-start: 4px solid var(--teal-dark); }
+.feedback.feedback-success { border-inline-start-color: #3f8a5f; background: var(--success-bg); color: var(--success-text); }
+.feedback.feedback-retry { border-inline-start-color: #bd7960; background: var(--retry-bg); color: var(--retry-text); }
+
+/* ==========================================================
+   Personal questions page
+   ========================================================== */
+.notepad .form-control, .notepad .form-select { border: 1px solid var(--muted); border-radius: .6rem; background-color: white; }
+.notepad .form-select { cursor: pointer; }
+.notepad label { margin-bottom: .3rem; font-weight: 600; }
+.notepad .is-invalid { border-color: var(--retry-text); }
+.notepad .invalid-feedback { color: var(--retry-text); font-size: .95rem; }
+.notepad .action { margin-block: 1rem; }
+#questionList { padding-inline-start: 1.4rem; }
+#questionList li { padding: .55rem 0; border-bottom: 1px solid var(--line); overflow-wrap: anywhere; }
+#questionList button { padding: .4rem .8rem; border: 0; background: transparent; color: var(--navy); font-weight: 600; text-decoration: underline; }
+#noteStatus:empty { margin: 0; }
+.privacy-note { color: var(--muted); }
+.copy-icon { position: relative; width: 1.2em; height: 1.2em; flex-shrink: 0; }
+.copy-icon::before, .copy-icon::after { content: ""; position: absolute; width: 65%; height: 74%; border: 1.6px solid currentColor; border-radius: 2px; }
+.copy-icon::before { top: 0; left: 0; }
+.copy-icon::after { right: 0; bottom: 0; background: var(--navy); }
+
+/* ==========================================================
+   More information links
+   ========================================================== */
+.resources { position: relative; isolation: isolate; margin-block: clamp(2.5rem, 5vw, 4.5rem); }
+.resource-heading h2 { color: var(--navy); }
+.resource-heading p, .resource-links span { color: var(--muted); }
+
+/* ==========================================================
+   End of the unit: submit box
+   ========================================================== */
+.finish { padding-bottom: clamp(2.5rem, 5vw, 4.5rem); }
+.finish-area { max-width: 40rem; text-align: center; }
+/* Not active yet (aria-disabled) or already used (disabled): grey, no hover lift. */
+.finish-area .action:is([aria-disabled="true"], :disabled) { background: var(--muted); box-shadow: none; cursor: not-allowed; transform: none; }
+.finish-area .action:disabled { cursor: default; }
+.finish-note { margin: .75rem 0 0; color: var(--muted); font-size: .95rem; }
+.finish-status:not(:empty) { margin: 1rem 0 0; padding: .85rem 1rem; border-radius: .75rem; background: var(--sky); color: var(--ink); }
+.resource-links { display: grid; gap: .75rem; }
+.resource-links a { display: grid; gap: .2rem; padding: 1rem 1.2rem; border: 1px solid var(--line); border-radius: var(--radius); background: white; color: var(--ink); text-decoration: none; box-shadow: var(--shadow-sm); transition: border-color .2s ease, box-shadow .2s ease; }
+.resource-links a:hover { border-color: var(--teal); box-shadow: var(--shadow-md); }
+.resource-links strong { display: inline-flex; align-items: center; gap: .5rem; color: var(--navy); font-size: 1.1rem; }
+.resource-links strong .icon { width: 1rem; height: 1rem; color: var(--teal-dark); }
+.resource-links a:hover strong { text-decoration: underline; }
+
+/* ==========================================================
+   Footer and credits accordion
+   ========================================================== */
+.site-footer { background: var(--navy); color: #dbe6f7; }
+.footer-inner { padding-block: clamp(2rem, 4vw, 3.5rem) 1rem; }
+.site-footer a { color: white; text-underline-offset: .25em; }
+.site-footer a:hover { color: white; text-decoration: underline; }
+.site-footer :focus-visible { outline-color: white; }
+.footer-mark-link { padding: .5rem; border-radius: .9rem; background: white; }
+.footer-mark { display: block; width: clamp(3.5rem, 6vw, 5rem); height: auto; }
+.footer-title p { margin: 0; color: white; font-size: clamp(1.3rem, 2.2vw, 1.9rem); font-weight: 600; line-height: 1.18; }
+.footer-title div a { display: inline-flex; align-items: center; min-height: 44px; }
+.footer-nav h2, .footer-credits h2 { margin: 0 0 .4rem; color: white; font-size: 1.05rem; letter-spacing: normal; }
+.footer-nav a { display: block; padding: .6rem 0; font-weight: 500; text-decoration: none; }
+.footer-credits { color: var(--footer-soft); font-size: .9rem; }
+.credits-toggle { display: inline-flex; align-items: center; gap: .5rem; min-height: 44px; padding: 0; border: 0; background: transparent; color: white; font: inherit; font-weight: 600; }
+.credits-toggle::after { content: "▾"; }
+.credits-toggle[aria-expanded="true"]::after { transform: rotate(180deg); }
+.footnote { margin: 0; padding-top: .9rem; border-top: 1px solid #ffffff33; color: var(--footer-soft); font-size: .88rem; text-align: center; }
+
+/* ==========================================================
+   Glossary: glossary window and term bubbles
+   ========================================================== */
+#glossary .modal-content { border: 0; border-radius: var(--radius); color: var(--ink); }
+#glossary .modal-title { color: var(--navy); font-size: 1.35rem; font-weight: 700; }
+.glossary-list { margin: 0; }
+.glossary-list dt { margin-top: 1rem; color: var(--navy); font-size: 1.1rem; }
+.glossary-list dt:first-child { margin-top: 0; }
+.glossary-list dd { margin: .2rem 0 0; padding-bottom: 1rem; border-bottom: 1px solid var(--line); }
+.glossary-list dd:last-child { padding-bottom: 0; border-bottom: 0; }
+/* A term inside the text: looks like text with a dotted underline and opens its explanation. */
+.term { display: inline; padding: 0; border: 0; background: none; color: var(--teal-dark); font: inherit; font-weight: 600; text-decoration: underline dotted; text-decoration-thickness: 2px; text-underline-offset: .25em; }
+.term:hover, .term[aria-expanded="true"] { color: var(--navy); text-decoration-style: solid; }
+.term-bubble { --bs-popover-max-width: 18rem; --bs-popover-border-color: var(--line); --bs-popover-header-bg: var(--sky); --bs-popover-header-color: var(--navy); --bs-popover-body-color: var(--ink); --bs-popover-font-size: 1rem; font-family: inherit; box-shadow: var(--shadow-md); }
+.term .icon { width: .85em; height: .85em; margin-inline-start: .15em; vertical-align: -.05em; }
+.bubble-content { display: flex; align-items: flex-start; gap: .5rem; }
+.bubble-content p { margin: 0; }
+.bubble-content strong { color: var(--navy); }
+.bubble-close { flex-shrink: 0; display: inline-grid; place-items: center; width: 32px; height: 32px; margin-block-start: -.35rem; margin-inline-end: -.5rem; padding: 0; border: 0; border-radius: 50%; background: transparent; color: var(--navy); }
+.bubble-close .icon { width: 24px; height: 24px; }
+.bubble-close:hover { background: var(--sky); }
+
+/* ==========================================================
+   Responsive: mobile first, larger screens from 768px
+   ========================================================== */
+@media only screen and (min-width: 768px) {
+  .logo { width: 128px; }
+  .top-bar.scrolled .logo { width: 104px; }
+  .nav-button-text { position: static; width: auto; height: auto; overflow: visible; clip-path: none; }
+  .scene { padding-block: 0; }
+  .file-tabs { padding-inline: 1rem; }
+  .file-tabs button { flex: 0 1 auto; padding-inline: clamp(.6rem, 1.4vw, 1.1rem); font-size: 1rem; }
+  .file-tabs .icon { display: block; }
+  .match-row { grid-template-columns: 1fr 14rem; align-items: center; }
+}
+/* The full menu and the text-size buttons fit in one row from 1200px (Bootstrap xl); below that the menu button is used. */
+@media only screen and (min-width: 1200px) {
+  .main-nav { flex: 1; flex-basis: auto; flex-direction: row; flex-wrap: wrap; justify-content: flex-end; padding-bottom: 0; }
+}
+
+/* ==========================================================
+   Motion: only when the user has not asked to reduce it
+   ========================================================== */
+@media (prefers-reduced-motion: no-preference) {
+  .js-motion .reveal { transition: opacity .7s ease, transform .7s cubic-bezier(.2, .7, .2, 1); }
+  .js-motion .reveal:not(.is-visible) { opacity: 0; transform: translateY(1.75rem); }
+  .motion-paused .reveal:not(.is-visible) { opacity: 1; transform: none; }
+  .scene .folder { animation: folder-float 4s ease-in-out infinite; }
+  .scene:is(:hover, :focus-within) .folder, .motion-paused .scene .folder { animation-play-state: paused; }
+  /* Step numbers pulse: a ring grows out of the circle and fades. The motion button stops it (back to the still ring). */
+  .step-label b { animation: step-pulse 2.4s ease-out infinite; }
+  .motion-paused .step-label b { animation: none; }
+  @keyframes step-pulse {
+    0% { box-shadow: 0 0 0 0 #1b9ec666, 0 0 0 6px #1b9ec622; }
+    70%, 100% { box-shadow: 0 0 0 16px #1b9ec600, 0 0 0 6px #1b9ec622; }
+  }
+  .doc, .action, .resource-links a { transition: transform .35s cubic-bezier(.2, .7, .2, 1), box-shadow .35s ease, background-color .2s ease, border-color .2s ease; }
+  .action:hover, .resource-links a:hover { transform: translateY(-2px); }
+  .file-tabs button { transition: transform .2s ease, background-color .2s ease; }
+  .file-tabs button:hover { transform: translateY(-3px); }
+  .file-sheet:not([hidden]), #quiz fieldset:not([hidden]) { animation: turn-sheet .32s ease-out; transform-origin: right center; }
+  .flip-inner { transition: transform .6s cubic-bezier(.2, .7, .2, 1); }
+  .motion-paused .flip-inner { transition: none; }
+  @keyframes folder-float {
+    0%, 100% { transform: translateY(0) rotate(-3deg); }
+    50% { transform: translateY(-8px) rotate(-2deg); }
+  }
+  @keyframes turn-sheet {
+    from { transform: perspective(950px) rotateY(-7deg) translateX(8px); opacity: .5; }
+    to { transform: none; opacity: 1; }
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-button { display: none; }
+}
